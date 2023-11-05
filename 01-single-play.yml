@@ -1,0 +1,11 @@
+---
+- name: Update ansiN1 server
+  hosts: ansiN1
+
+
+  tasks:
+  - name: Create Directory
+    file:
+      path: /home/centos/new_dir
+      state: directory
+
