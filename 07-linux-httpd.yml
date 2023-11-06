@@ -1,0 +1,21 @@
+---
+- name: install Http linux
+  hosts: n2
+  become: yes
+
+  tasks:
+  - name: install Apache http server
+    dnf:
+      name: httpd
+      state: present
+
+  - name: start Apache
+    service:
+      name: httpd
+      state: started
+
+  - name: enable Apache
+    service:
+      name: httpd
+      enabled: true
+
