@@ -1,0 +1,21 @@
+---
+- name: install Http ubuntu
+  hosts: n1
+  become: yes
+
+  tasks:
+  - name: install Apache2
+    apt:
+      name: apache2
+      state: present
+
+  - name: start Apache2
+    service:
+      name: apache2
+      state: started
+
+  - name: enable Apache2
+    service:
+      name: apache2
+      enabled: true
+
