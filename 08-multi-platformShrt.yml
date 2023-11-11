@@ -4,7 +4,7 @@
   become: yes
 
   tasks:
-  - name: install Apache2
+  - name: install Apache on Debian family
     apt:
       name: apache2
       state: present
@@ -22,7 +22,7 @@
       enabled: true
     when: ansible_os_family == "Debian"
 
-  - name: install Apache http server
+  - name: install Apache on Red Hat family
     dnf:
       name: httpd
       state: present
