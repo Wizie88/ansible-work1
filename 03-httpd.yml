@@ -1,6 +1,6 @@
 ---
 - name: install Http server
-  hosts: ansiN2
+  hosts: g1
   become: yes
 
   tasks:
