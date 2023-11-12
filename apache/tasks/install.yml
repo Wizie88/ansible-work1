@@ -1,6 +1,5 @@
 ---
 - name: install Http server
-  hosts: g1
   become: yes
 
 - name: install Apache2
