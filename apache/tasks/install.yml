@@ -1,7 +1,4 @@
 ---
-- name: install Http server
-  become: yes
-
 - name: install Apache2
   apt:
     name: apache2
