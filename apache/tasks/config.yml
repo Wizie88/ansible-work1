@@ -1,23 +1,20 @@
 ---
-  tasks:
   - name: update static page
     copy:
       src: static.html
       dest: /var/www/html/static.html
 
-  - name: update static page
+  - name: update dynamic page
     template:
       src: dynamic.j2
       dest: /var/www/html/dynamic.html
 
-  - name: update Httpd Config
+  - name: update HTTPD Config
     template:
       src: httpd.j2
       dest: /etc/httpd/conf/httpd.conf
-
-  - name: restart Httpd 
-    service:
-      name: httpd
-      state: restarted  
+    notify:
+    - Restart HTTPD 
+     
 ...
 
