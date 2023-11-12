@@ -1,0 +1,18 @@
+---
+- name: Variable Demo
+  hosts: g1
+  become: yes
+  vars:
+    myusername: Wizie
+    http_port_default: 80
+    http_port_1: 8080
+    http_port_2: 9090
+
+  tasks:
+  - name: update Httpd Config
+    template:
+      src: dynamic.j2
+      dest: /var/www/html/dynamic.html
+...
+
+
